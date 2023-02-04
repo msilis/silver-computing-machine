@@ -1,0 +1,16 @@
+.hangman-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-container {
+    
+    margin: .25rem;
+    width: 2rem;
+    border-bottom: 2px solid black;
+}
+
+.letter-display {
+    visibility: hidden;
+}
