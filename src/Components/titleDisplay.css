@@ -1,0 +1,12 @@
+.title-container {
+    width: 60%;
+    height: 6rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    background-image: linear-gradient(to bottom, lightblue, lightgreen);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
