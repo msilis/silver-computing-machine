@@ -3,11 +3,14 @@ import "./userInput.css";
 function UserInput(props) {
   //Send input to App
   function handleInputChange(event) {
+
     if (event.target.value === "") {
       alert("Please enter a letter");
     }
     props.setUserInput(event.target.value);
   }
+
+
 
   return (
     <div className="input-container">
@@ -25,6 +28,9 @@ function UserInput(props) {
       </div>
       <div id="reset-button" onClick={props.onResetClick}>
         <h4>Reset</h4>
+      </div>
+      <div id="help-button" onClick={props.onHelpClick}>
+        <h4>Help</h4>
       </div>
       </div>
     </div>

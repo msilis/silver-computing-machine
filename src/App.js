@@ -4,6 +4,7 @@ import "./App.css";
 import HangmanDisplay from "./Components/hangmanDisplay";
 import HangmanPicDisplay from "./Components/hangmanPicDisplay";
 import InputLetters from "./Components/inputLetters";
+import InfoModal from "./Components/Modal/infoModal";
 import TitleDisplay from "./Components/titleDisplay";
 import UserInput from "./Components/userInput";
 
@@ -15,6 +16,7 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [, setUserReset] = useState(false);
   const [mysteryWord, setMysteryWord] = useState("");
+  const [showModal, setShowModal] = useState(false)
   const inputRef = useRef();
 
   //Split up word into array and pass as props to display component
@@ -95,6 +97,20 @@ function App() {
     inputRef.current?.focus();
   }
 
+  //Help button functionality
+
+  function handleHelpClick(){
+    setShowModal(true)
+  }
+
+  //Modal hide button functionality
+
+  function handleHideClick(){
+    setShowModal(false)
+  }
+
+
+
   //Get random word from API
 
   //Fetch random word when page loads for the first time
@@ -125,9 +141,11 @@ function App() {
         onKeyDown={handleKeyEnter}
         setUserInput={setUserInput}
         setUserReset={setUserReset}
+        onHelpClick={handleHelpClick}
         value={userInput}
       />
       <InputLetters letters={enteredLetters} />
+      <InfoModal onHideClick={handleHideClick} modalState={showModal}/>
     </div>
   );
 }

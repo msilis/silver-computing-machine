@@ -72,3 +72,23 @@ h4 {
 #reset-button:active {
     transform: translateY(4px);
 }
+
+/*  Help button styles */
+
+#help-button {
+    width: 8rem;
+    height: 2.5rem;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 3px 3px 3px black;
+    transition: .5s;
+}
+
+#help-button:hover {
+    cursor: pointer;
+}
+
+#help-button:active {
+    transform: translateY(4px);
+}
