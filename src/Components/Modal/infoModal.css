@@ -34,6 +34,8 @@
     color: white;
 }
 
+/* Modal close button */
+
 #modal-close-button {
     border: 2px solid gray;
     width: 6rem;

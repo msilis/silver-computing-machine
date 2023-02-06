@@ -1,6 +1,7 @@
 import './infoModal.css';
 
 function InfoModal(props){
+    //Set conditional rendering of modal
     const modalClassName = props.modalState ? 'modal display-block' : 'modal display-none'
 
     return(

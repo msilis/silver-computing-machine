@@ -8,6 +8,7 @@ import InfoModal from "./Components/Modal/infoModal";
 import TitleDisplay from "./Components/titleDisplay";
 import UserInput from "./Components/userInput";
 
+//Arrays to hold guessed letters
 let enteredLetters = [];
 let guessedLetterArray = [];
 
@@ -16,13 +17,11 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [, setUserReset] = useState(false);
   const [mysteryWord, setMysteryWord] = useState("");
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   const inputRef = useRef();
 
   //Split up word into array and pass as props to display component
   let splitWord = mysteryWord.split("");
-  
-  
 
   //Check for winner
   function checkWinner() {
@@ -38,13 +37,13 @@ function App() {
   //Submit button functionality
   function handleButtonClick() {
     if (splitWord.includes(userInput)) {
-      if (guessedLetterArray.includes(userInput)) {
+      if (guessedLetterArray.includes(userInput) || enteredLetters.includes(userInput)) {
         alert("You have already guessed that letter");
       } else {
         console.log("The letter you guessed is in the word");
         guessedLetterArray.push(userInput);
         console.log(guessedLetterArray);
-        checkWinner()
+        checkWinner();
       }
     } else {
       console.log("The letter was not in the word");
@@ -99,17 +98,15 @@ function App() {
 
   //Help button functionality
 
-  function handleHelpClick(){
-    setShowModal(true)
+  function handleHelpClick() {
+    setShowModal(true);
   }
 
   //Modal hide button functionality
 
-  function handleHideClick(){
-    setShowModal(false)
+  function handleHideClick() {
+    setShowModal(false);
   }
-
-
 
   //Get random word from API
 
@@ -125,7 +122,6 @@ function App() {
     }
     getMysteryWord();
   }, []);
-
 
   return (
     <div className="App">
@@ -145,7 +141,7 @@ function App() {
         value={userInput}
       />
       <InputLetters letters={enteredLetters} />
-      <InfoModal onHideClick={handleHideClick} modalState={showModal}/>
+      <InfoModal onHideClick={handleHideClick} modalState={showModal} />
     </div>
   );
 }
