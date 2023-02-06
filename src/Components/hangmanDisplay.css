@@ -11,6 +11,10 @@
     border-bottom: 2px solid black;
 }
 
-.letter-display {
+.letter-display-hidden {
     visibility: hidden;
+}
+
+.letter-display-visible {
+    visibility: visible;
 }

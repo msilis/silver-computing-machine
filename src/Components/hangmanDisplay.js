@@ -1,32 +1,19 @@
-import { useState, useEffect } from "react";
 import './hangmanDisplay.css';
 
+function HangmanDisplay(props){
 
-function HangmanDisplay(){
-
-    const [mysteryWord, setMysteryWord] = useState('')
-
-  useEffect(()=>{
-    async function getMysteryWord(){
-      const response = await fetch('https://random-word-api.herokuapp.com/word');
-      console.log(response)
-      const word = await response.json()
-      console.log(word)
-      setMysteryWord(word.toString())
-     
-  };
-  getMysteryWord();
-  }, []);
-
-  let splitWord = mysteryWord.split('');
-  console.log(splitWord)
-
-
+    //get props from App component
+    let randomWord = props.splitWord;
+    let guessedLetterArray = props.guessedLetters;
+    let dataDivId = 0;
+    let dataPId = 0;
+   
+   
 
     return(
         <div className="hangman-container">
-            {splitWord.map((value)=> {
-                return <div className="character-container"><p className="letter-display">{value}</p></div>
+            {randomWord.map((value)=> {
+                return <div key={dataDivId++} className="character-container"><p key={dataPId++} className={guessedLetterArray.includes(value) ? 'letter-display-visible' : 'letter-display-hidden'}>{value}</p></div>
             })}
         </div>
     )
