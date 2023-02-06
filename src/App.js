@@ -37,7 +37,7 @@ function App() {
   //Submit button functionality
   function handleButtonClick() {
     if (splitWord.includes(userInput)) {
-      if (guessedLetterArray.includes(userInput) || enteredLetters.includes(userInput)) {
+      if (guessedLetterArray.includes(userInput)) {
         alert("You have already guessed that letter");
       } else {
         console.log("The letter you guessed is in the word");
@@ -45,11 +45,14 @@ function App() {
         console.log(guessedLetterArray);
         checkWinner();
       }
+    } else if (enteredLetters.includes(userInput)) {
+      alert("You have already guessed that letter");
     } else {
       console.log("The letter was not in the word");
       enteredLetters.push(userInput);
       console.log(enteredLetters);
     }
+    //Reset inputs and state
     setUserInput("");
     setUserReset(false);
     checkWinner();
@@ -66,10 +69,13 @@ function App() {
           console.log("The letter you guessed is in the word");
           guessedLetterArray.push(userInput);
         }
+      } else if (enteredLetters.includes(userInput)) {
+        alert("You have already guessed that letter");
       } else {
         console.log("The letter was not in the word");
         enteredLetters.push(userInput);
       }
+      //Reset inputs and state
       setUserInput("");
       setUserReset(false);
       checkWinner();
