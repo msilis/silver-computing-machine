@@ -26,16 +26,16 @@ The random words are taken from the Random Word API found here: https://random-w
 
 ##Install
 
-1. Download the following files and folders:
-* public
-* src
-* package-lock.json
-* package.json
-
-2. Open folder containing files in your IDE
-3. While in the folder, in the terminal type *npm install* to get all dependencies
-4. Once all dependencies have been downloaded, type *npm run* which should start the server and open a webpage in a browser to display the hangman app
-5. If browser doesn't open automatically, navigate to *localhost:3000* (usually the default) or wherever your terminal says the app is running
+1. Download the zip file which should contain the following files and folders:
+    * public
+    * src
+    * package-lock.json
+    * package.json
+2. Unzip the downloaded file into a folder.
+3. Open folder containing files in your IDE
+4. While in the folder, in the terminal type *npm install* to get all dependencies
+5. Once all dependencies have been downloaded, type *npm run* which should start the server and open a webpage in a browser to display the hangman app
+6. If browser doesn't open automatically, navigate to *localhost:3000* (usually the default) or wherever your terminal says the app is running
 
 
 
