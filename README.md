@@ -24,5 +24,19 @@ To get help, press the help button and some basic info will pop up.
 The random words are taken from the Random Word API found here: https://random-word-api.herokuapp.com/word
 
 
+##Install
+
+1. Download the following files and folders:
+* public
+* src
+* package-lock.json
+* package.json
+
+2. Open folder containing files in your IDE
+3. While in the folder, in the terminal type *npm install* to get all dependencies
+4. Once all dependencies have been downloaded, type *npm run* which should start the server and open a webpage in a browser to display the hangman app
+5. If browser doesn't open automatically, navigate to *localhost:3000* (usually the default) or wherever your terminal says the app is running
+
+
 
 

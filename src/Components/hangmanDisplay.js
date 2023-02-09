@@ -9,6 +9,7 @@ function HangmanDisplay(props) {
 
   return (
     <div className="hangman-container">
+      {/* Map each letter in the array to it's own div for display */}
       {randomWord.map((value) => {
         return (
           <div key={dataDivId++} className="character-container">

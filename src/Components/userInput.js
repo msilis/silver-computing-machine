@@ -3,10 +3,11 @@ import "./userInput.css";
 function UserInput(props) {
   //Send input to App
   function handleInputChange(event) {
-
+    //if user doesn't enter anything, prompt the following:
     if (event.target.value === "") {
       alert("Please enter a letter");
     }
+    //send the input up to the app component
     props.setUserInput(event.target.value);
   }
 

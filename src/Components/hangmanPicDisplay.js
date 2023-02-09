@@ -12,6 +12,7 @@ import eigthangman from "../Media/state9.GIF";
 import ninthangman from "../Media/state10.GIF";
 import tenthangman from "../Media/state11.GIF";
 
+//Array of images
 let hangmanArray = [
   firstHangman,
   secondangman,
@@ -31,6 +32,7 @@ function HangmanPicDisplay(props) {
 //conditionally show hangman pic, set pic for last guess
   const imageSource = enteredLetters.length >=10 ? 9 : enteredLetters.length;
 
+  //Check the length of enteredLetters and if it's more than 10 (meaning the complete hangman has been drawn), say the user lost.     
   if (enteredLetters.length >= 10) {
     alert("You have lost!");
   }

@@ -1,4 +1,10 @@
-/* Container styles and button styles */
+/* 1. Container styles
+   2. Input button
+   3. Reset button
+   4. Help button  */
+
+
+/* 1. Container styles and button styles */
 
 .input-container {
     width: 60%;
@@ -32,7 +38,7 @@
     text-align: center;
 }
 
-/* Input button styles*/
+/* 2. Input button styles*/
 #input-button {
     width: 8rem;
     height: 2.5rem;
@@ -55,7 +61,7 @@ h4 {
     margin-top: .5rem;
 }
 
-/*  Reset button styles   */
+/*  3. Reset button styles   */
 
 #reset-button {
     width: 8rem;
@@ -75,7 +81,7 @@ h4 {
     transform: translateY(4px);
 }
 
-/*  Help button styles */
+/*  4. Help button styles */
 
 #help-button {
     width: 8rem;
