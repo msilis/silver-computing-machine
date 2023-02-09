@@ -8,6 +8,7 @@ function InputLetters(props){
 
     return(
         <div className='letter-display-container'>
+            {/* Map letters from passed-in array */}
             {props.letters.map((value) => {
                 return <p key={letterKey++}>{value}</p>
             })

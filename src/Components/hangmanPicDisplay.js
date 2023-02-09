@@ -27,6 +27,7 @@ let hangmanArray = [
 ];
 
 function HangmanPicDisplay(props) {
+  //get the enteredLetters array through props
   let enteredLetters = props.enteredLetters;
 
 //conditionally show hangman pic, set pic for last guess

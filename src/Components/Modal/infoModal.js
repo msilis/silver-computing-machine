@@ -5,6 +5,7 @@ function InfoModal(props){
     const modalClassName = props.modalState ? 'modal display-block' : 'modal display-none'
 
     return(
+        //grab classname from what is passed down through props
         <div className={modalClassName}>
             <div className='modal-container'>
                 <div className='help-items'>
