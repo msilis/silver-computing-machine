@@ -25,7 +25,6 @@ function App() {
   const inputRef = useRef();
 
   //Get random word from API
-
   //Fetch random word when page loads for the first time
   useEffect(() => {
     async function getMysteryWord() {

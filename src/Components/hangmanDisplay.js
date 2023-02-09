@@ -15,6 +15,7 @@ function HangmanDisplay(props) {
           <div key={dataDivId++} className="character-container">
             <p
               key={dataPId++}
+              /* Toggle class name depending on entered letter match */
               className={
                 guessedLetterArray.includes(value)
                   ? "letter-display-visible"

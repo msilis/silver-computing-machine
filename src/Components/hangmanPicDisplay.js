@@ -33,7 +33,7 @@ function HangmanPicDisplay(props) {
   const imageSource = enteredLetters.length >=10 ? 9 : enteredLetters.length;
 
   //Check the length of enteredLetters and if it's more than 10 (meaning the complete hangman has been drawn), say the user lost.     
-  if (enteredLetters.length >= 10) {
+  if (enteredLetters.length >= 9) {
     alert("You have lost!");
   }
 
