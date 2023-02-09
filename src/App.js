@@ -42,7 +42,7 @@ function App() {
 
   //Split up word into array and pass as props to display component
   let splitWord = mysteryWord.split("");
-  console.log(splitWord)
+  console.log(splitWord);
 
   //Check for winner
   function checkWinner() {
@@ -54,6 +54,9 @@ function App() {
     //If the arrays match, declare winner
     if (isEqual(guessedLetterArraySet, splitWordSet)) {
       alert("You figured it out!");
+      //Or if the length of the entere letters array is greater than 9, alert loser
+    }else if (enteredLetters.length >= 9){
+      alert('You have lost.')
     }
   }
   //Submit button functionality
@@ -156,7 +159,10 @@ function App() {
   return (
     <div className="App">
       <TitleDisplay />
-      <HangmanPicDisplay enteredLetters={enteredLetters} />
+      <HangmanPicDisplay 
+        enteredLetters={enteredLetters}
+        />
+        
       <HangmanDisplay
         splitWord={splitWord}
         guessedLetters={guessedLetterArray}
