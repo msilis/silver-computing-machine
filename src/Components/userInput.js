@@ -21,6 +21,7 @@ function UserInput(props) {
         value={props.value || ""}
         onChange={handleInputChange}
         onKeyDown={props.onKeyDown}
+        disabled={props.inputState}
       ></input>
       <div className="button-container">
         <div id="input-button" onClick={props.onSubmitClick}>

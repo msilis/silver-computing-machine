@@ -18,6 +18,8 @@ function App() {
   const [userInput, setUserInput] = useState("");
   //state to make reset button functional
   const [, setUserReset] = useState(false);
+  //state for input - disable when end of game has been reached
+  const [inputState, setInputState] = useState(false)
   //random word
   const [mysteryWord, setMysteryWord] = useState("");
   //state for help screen
@@ -54,9 +56,11 @@ function App() {
     //If the arrays match, declare winner
     if (isEqual(guessedLetterArraySet, splitWordSet)) {
       alert("You figured it out!");
+      setInputState(true)
       //Or if the length of the entere letters array is greater than 9, alert loser
     }else if (enteredLetters.length >= 9){
       alert('You have lost.')
+      setInputState(true)
     }
   }
   //Submit button functionality
@@ -83,7 +87,6 @@ function App() {
     }
     //Reset inputs and state
     setUserInput("");
-    setUserReset(false);
     checkWinner();
     inputRef.current?.focus();
   }
@@ -111,6 +114,7 @@ function App() {
       //Reset inputs and state
       setUserInput("");
       setUserReset(false);
+      setInputState(false)
       //Check if there was a winner
       checkWinner();
       //refocus cursor on input after submit
@@ -123,6 +127,7 @@ function App() {
 
   function clearArray(array) {
     console.log("clearArray");
+    setInputState(false)
     while (array.length > 0) {
       array.pop();
     }
@@ -175,6 +180,7 @@ function App() {
         setUserReset={setUserReset}
         onHelpClick={handleHelpClick}
         value={userInput}
+        inputState={inputState}
       />
       <InputLetters letters={enteredLetters} />
       <InfoModal onHideClick={handleHideClick} modalState={showModal} />
